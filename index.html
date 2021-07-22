@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exquiphix</title>
+  </head>
+  <body>
+    <div class="display">
+      <header>
+        <div class="header">
+          <div class="header-logo">
+            <img src="images/logo-black.png" alt="Exquiphix Logo" />
+          </div>
+          <div class="navbar">
+            <ul>
+              <li>
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-briefcase"></i> Work</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-tools"></i> Services</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-user"></i> About</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-phone-alt"></i> Contact</a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+              </li>
+            </ul>
+          </div>
+          <div class="burger">
+            <div class="burger1"></div>
+            <div class="burger2"></div>
+            <div class="burger3"></div>
+          </div>
+        </div>
+      </header>
+      <div class="display-content">
+        <h1>Designs that inspires</h1>
+      </div>
+    </div>
+    <h1>Ths is heading</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, quae
+      placeat, voluptas deserunt natus ducimus rerum perspiciatis repellat eos
+      voluptate accusamus ipsa numquam voluptatum mollitia culpa nobis adipisci
+      explicabo sequi.
+    </p>
+
+    <script>
+      $(document).ready(function () {
+        $(".burger").click(function () {
+          $(".header").toggleClass("burger-clicked");
+        });
+      });
+    </script>
+  </body>
+</html>
