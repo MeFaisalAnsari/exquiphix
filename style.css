@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&family=Montserrat:wght@700&display=swap");
+
+:root {
+  --font-paragraph1: "Raleway", sans-serif;
+  --font-paragraph2: "Roboto", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+  --color1: #ffde05;
+  --color2: #0040ff;
+}
+
+.font-paragraph1 {
+  font-family: var(--font-paragraph1);
+}
+.font-paragraph2 {
+  font-family: var(--font-paragraph2);
+}
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+.display {
+  /* background: yellow; */
+  width: 100%;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* background: pink; */
+  position: relative;
+}
+.header-logo img {
+  width: 200px;
+}
+.navbar {
+  /* background: green; */
+  width: 100%;
+}
+.navbar ul {
+  display: flex;
+  float: right;
+  list-style: none;
+  font-family: var(--font-heading);
+}
+.navbar a {
+  font-size: 20px;
+  padding: 0 20px;
+  color: #000;
+  transition: 0.25s ease-in-out;
+}
+.navbar a:hover {
+  color: rgb(109, 109, 109);
+}
+.burger {
+  display: none;
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.burger div {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #000;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  /* transition: background 1.25s ease-in-out; */
+  transition: all 0.25s ease-in-out;
+}
+.burger1 {
+  top: 0px;
+}
+.burger2 {
+  top: 13px;
+}
+.burger1 {
+  top: 26px;
+}
+
+@media (max-width: 1200px) {
+  .navbar ul {
+    background: #000;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    padding-top: 20px;
+    transform: translateX(-100%);
+    transition: 0.5s ease-in-out;
+  }
+  .navbar li {
+    padding: 10px 5px;
+  }
+  .navbar a {
+    color: #fff;
+    display: block;
+    transform: translateX(-10px);
+    opacity: 0;
+    transition: 0.5s ease;
+    transition-delay: 0.5s;
+  }
+  .burger {
+    display: block;
+    z-index: 100;
+  }
+  .burger-clicked .navbar {
+    display: block;
+  }
+  .burger-clicked ul {
+    transform: translateX(0);
+  }
+  .burger-clicked .burger {
+    width: 50px;
+  }
+  .burger-clicked .burger1 {
+    top: 13px;
+    transform: rotate(135deg);
+  }
+  .burger-clicked .burger2 {
+    opacity: 0;
+    left: -50px;
+  }
+  .burger-clicked .burger3 {
+    top: 13px;
+    transform: rotate(-135deg);
+  }
+  .burger-clicked .navbar a {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  .burger-clicked .burger div {
+    background: rgb(126, 126, 126);
+  }
+}
