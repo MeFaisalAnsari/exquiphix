@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&family=Montserrat:wght@500&display=swap");
 
 :root {
   --font-paragraph1: "Raleway", sans-serif;
@@ -23,16 +23,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
+}
+body {
+  overflow-x: hidden;
+}
+.position-fixed {
+  position: fixed;
 }
 
 .display {
   /* background: yellow; */
+  background: url(images/4.jpg);
+  background-attachment: fixed;
+  background-size: cover;
   width: 100%;
   min-height: 100vh;
 }
-
+header {
+  position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -55,47 +70,31 @@ a {
   font-family: var(--font-heading);
 }
 .navbar a {
-  font-size: 20px;
-  padding: 0 20px;
+  font-size: 18px;
+  padding: 0 40px;
   color: #000;
   transition: 0.25s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* font-weight: ; */
 }
 .navbar a:hover {
   color: rgb(109, 109, 109);
 }
 .burger {
   display: none;
-  width: 50px;
-  height: 30px;
   position: absolute;
   right: 20px;
   top: 20px;
   cursor: pointer;
 }
-.burger div {
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: #000;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  /* transition: background 1.25s ease-in-out; */
-  transition: all 0.25s ease-in-out;
-}
-.burger1 {
-  top: 0px;
-}
-.burger2 {
-  top: 13px;
-}
-.burger1 {
-  top: 26px;
+.burger .fa-times {
+  display: none;
 }
 
 @media (max-width: 1200px) {
   .navbar ul {
-    background: #000;
+    background: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: 0px;
     left: 0;
@@ -121,32 +120,64 @@ a {
     display: block;
     z-index: 100;
   }
+  .burger-clicked .header-logo {
+    display: none;
+  }
   .burger-clicked .navbar {
     display: block;
   }
   .burger-clicked ul {
     transform: translateX(0);
   }
-  .burger-clicked .burger {
-    width: 50px;
+  .burger-clicked .fa-bars {
+    display: none;
   }
-  .burger-clicked .burger1 {
-    top: 13px;
-    transform: rotate(135deg);
-  }
-  .burger-clicked .burger2 {
-    opacity: 0;
-    left: -50px;
-  }
-  .burger-clicked .burger3 {
-    top: 13px;
-    transform: rotate(-135deg);
+  .burger-clicked .fa-times {
+    display: block;
+    color: #aaa;
   }
   .burger-clicked .navbar a {
     transform: translateX(0px);
     opacity: 1;
   }
-  .burger-clicked .burger div {
-    background: rgb(126, 126, 126);
+}
+.images {
+  width: 100%;
+}
+.images img {
+  width: 100%;
+}
+
+.display-scroll {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.display-scroll img {
+  cursor: pointer;
+  animation: scrollDown 1s ease-in infinite alternate;
+}
+@keyframes scrollDown {
+  from {
+    transform: translateY(-20px);
   }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+#after-display .img1 {
+  background: url(images/1.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+#after-display .img2 {
+  background: url(images/2.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
